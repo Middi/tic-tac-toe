@@ -25,7 +25,7 @@
 		"tS": 0
 		},
 	"\/scss\/_colors.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -38,7 +38,7 @@
 		"uL": 1
 		},
 	"\/scss\/_media-queries.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -51,7 +51,7 @@
 		"uL": 1
 		},
 	"\/scss\/_normalise.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -64,7 +64,7 @@
 		"uL": 1
 		},
 	"\/scss\/_typography.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -83,9 +83,9 @@
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 1,
-		"oAP": "\/scss\/style.css",
-		"oF": 0,
+		"oA": 0,
+		"oAP": "\/css\/style.css",
+		"oF": 3,
 		"oS": 0,
 		"uL": 1
 		}
@@ -1967,12 +1967,12 @@
 		"autoOutputPathRelativePath": "..\/css",
 		"autoOutputPathReplace1": "sass",
 		"autoOutputPathReplace2": "css",
-		"autoOutputPathStyle": 1,
+		"autoOutputPathStyle": 0,
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"outputStyle": 0,
-		"shouldRunAutoprefixer": 0,
+		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0,
 		"useLibsass": 1
 		},
