@@ -32,3 +32,11 @@ box[i].addEventListener('click', function () {
     }
 });
 }
+
+document.getElementById('restart').addEventListener('click', function() {
+
+for(var i = 0; i < box.length; i++) {
+    box[i].innerHTML = "";
+    spaces[i +1] = 0;
+}
+});
