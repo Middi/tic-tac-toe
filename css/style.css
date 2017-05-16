@@ -97,7 +97,8 @@ main {
 
 #game-area {
   display: table-cell;
-  vertical-align: middle; }
+  vertical-align: middle;
+  padding-bottom: 40px; }
 
 .row {
   display: -webkit-box;
@@ -169,8 +170,6 @@ footer p {
     height: 110px;
     font-size: 80px;
     padding-top: 10px; }
-  nav {
-    padding: 6px; }
   h1 {
     font-size: 1.8em; } }
 
