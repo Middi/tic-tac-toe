@@ -30,17 +30,5 @@ box[i].addEventListener('click', function () {
         console.log(turn);
         console.log(spaces);
     }
-console.log('yeah');
 });
 }
-
-
-
-// var plus = document.getElementById('plus');
-
-// plus.addEventListener('click', function (e) {
-//     e.preventDefault();
-//     timeLeft = timeLeft + 60;
-//     counterDom.innerHTML = (convertMins(timeLeft - counter));
-
-// });
