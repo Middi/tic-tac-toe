@@ -1,0 +1,34 @@
+/*=======================================
+=              MEDIA QUERIES           =
+=======================================*/
+
+
+/* -- BREAK 1 -- */
+
+@media all and (max-width: 580px) {
+
+.square {
+    width: 110px;
+    height: 110px;
+    font-size: 80px;
+    padding-top: 10px;
+}
+
+nav {padding: 6px}
+
+h1 {font-size: 1.8em}
+
+}
+
+
+/* -- BREAK 2 -- */
+
+@media all and (max-width: 400px) {
+
+.square {
+    width: 90px;
+    height: 90px;
+    padding-top: 0;
+}
+
+}

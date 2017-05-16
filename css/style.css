@@ -71,26 +71,18 @@ body {
   background: whitesmoke; }
 
 header {
-  height: 56px;
   width: 100%;
   position: fixed;
+  display: table;
   top: 0;
   z-index: 2;
   background-color: black;
-  border-bottom: 2px solid #262626; }
+  text-align: center; }
 
 nav {
-  width: 100%;
-  height: 56px;
-  top: 0;
-  margin: 0 auto;
-  position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  padding: 8px;
+  display: table-cell;
+  vertical-align: middle;
   z-index: 100; }
 
 .logo {
@@ -143,11 +135,11 @@ footer {
   width: 100%;
   display: table;
   text-align: center;
-  position: absolute;
+  position: fixed;
   background: black; }
 
 .built {
-  color: #c8c8c8;
+  color: white;
   display: table-cell;
   vertical-align: middle; }
 
@@ -166,3 +158,25 @@ footer p {
 .fa-free-code-camp {
   padding: 0 5px 0 0;
   color: white; }
+
+/*=======================================
+=              MEDIA QUERIES           =
+=======================================*/
+/* -- BREAK 1 -- */
+@media all and (max-width: 580px) {
+  .square {
+    width: 110px;
+    height: 110px;
+    font-size: 80px;
+    padding-top: 10px; }
+  nav {
+    padding: 6px; }
+  h1 {
+    font-size: 1.8em; } }
+
+/* -- BREAK 2 -- */
+@media all and (max-width: 400px) {
+  .square {
+    width: 90px;
+    height: 90px;
+    padding-top: 0; } }
