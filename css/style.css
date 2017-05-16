@@ -54,7 +54,7 @@ h1, h2, h3, h4 {
 
 h1 {
   font-size: 2.2em;
-  font-weight: 200; }
+  font-weight: 300; }
 
 h1 span {
   font-weight: 700;
@@ -62,6 +62,10 @@ h1 span {
 
 a {
   color: whitesmoke; }
+
+.square {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 100px; }
 
 body {
   background: whitesmoke; }
@@ -113,7 +117,17 @@ main {
 
 .square {
   width: 160px;
-  height: 160px; }
+  height: 160px;
+  cursor: pointer;
+  cursor: hand;
+  text-align: center;
+  padding-top: 20px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease; }
+  .square:hover {
+    background: #e8e8e8; }
+  .square:active {
+    background: #dbdbdb; }
 
 .top-border {
   border-top: 2px solid #262626; }
@@ -125,7 +139,7 @@ footer {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 6px;
+  padding: 10px;
   width: 100%;
   display: table;
   text-align: center;
@@ -138,11 +152,10 @@ footer {
   vertical-align: middle; }
 
 footer p {
-  font-size: 0.9em; }
+  font-size: 1em; }
 
 .built a, strong {
-  font-size: 1.1em;
-  font-weight: 200; }
+  font-weight: 300; }
   .built a:hover, strong:hover {
     text-decoration: underline; }
 

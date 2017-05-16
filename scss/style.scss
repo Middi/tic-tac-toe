@@ -61,15 +61,19 @@ main {
 .square {
     width: 160px;
     height: 160px;
+    cursor: pointer;
+    cursor: hand;
+    text-align: center;
+    padding-top: 20px;
+	transition: all 0.4s ease;
+
+    &:hover {background: $light-grey}
+    &:active {background: darken($light-grey, 5)}
 }
 
-.top-border {
-    border-top: 2px solid $black;
-}
+.top-border {border-top: 2px solid $black}
 
-.right-border {
-    border-right: 2px solid $black;
-}
+.right-border {border-right: 2px solid $black}
 
 
 
@@ -79,7 +83,7 @@ footer {
 	right: 				0;
 	bottom: 		 	0;
 	left: 			 	0;
-	padding: 		  6px;
+	padding: 		 10px;
 	width: 			 100%;
 	display: 	 	table;
 	text-align:    center;
@@ -97,11 +101,10 @@ footer {
 
 // ---- Footer Styles ---- //
 
-footer p {font-size: 0.9em;}
+footer p {font-size: 1em;}
 
 .built a, strong {
-	font-size: 1.1em;
-	font-weight: 200;
+	font-weight: 300;
 	
 	&:hover {text-decoration: underline;}
 }
