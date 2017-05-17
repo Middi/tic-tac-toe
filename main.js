@@ -1,5 +1,5 @@
 var turn = "X";
-var player = "";
+var player;
 var spaces = {
     "1": 0,
     "2": 0,
@@ -22,8 +22,14 @@ var bgmodal = document.getElementById('modal-bg');
 var closemodal = document.getElementsByClassName('close');
 var X = document.getElementById('X');
 var O = document.getElementById('O');
+var players = document.getElementById('player');
+var symbol = document.getElementById('symbol');
+var num;
 
+function twoPlayer() {
 
+    players.className = "hidden";
+    symbol.className = "row";
 // box event handlers
 for (var i = 0; i < box.length; i++) {
     box[i].addEventListener('click', function () {
@@ -36,10 +42,9 @@ for (var i = 0; i < box.length; i++) {
                 checkWin();
                 console.log(turn);
                 console.log(spaces);
+
             }
-            else {
-                console.log('space taken');
-            }
+            else { console.log('space taken'); }
         }
 
         else {
@@ -51,37 +56,81 @@ for (var i = 0; i < box.length; i++) {
                 console.log(turn);
                 console.log(spaces);
             }
-            else {
-                console.log('space taken');
-            }
+            else {console.log('space taken');}
         }
     });
 }
+
+}
+
+
+function onePlayer() {
+
+    players.className = "hidden";
+    symbol.className = "row";
+// box event handlers
+for (var i = 0; i < box.length; i++) {
+    box[i].addEventListener('click', function () {
+
+        if (spaces[this.id] === 0) {
+
+            this.innerHTML = "O";
+            spaces[this.id] = "O";
+            checkWin();
+            random();
+            // random number for object position
+            function random() {
+                num = Math.floor(Math.random() * 9) + 1;
+               return num.toString();
+            }
+            computer(num);
+
+            function computer(num) {
+                if (spaces[parseInt(num)] === 0) {
+                box[parseInt(num)].innerHTML = "X";
+                spaces[parseInt(num)] = "X";
+                console.log(num);
+                console.log('square free');
+            }
+            else {
+                random();
+                computer(num);
+            }
+        }
+        }
+
+    });
+}
+
+}
+
 
 // restart button event listener
 for (var i = 0; i < restart.length; i++) {
     restart[i].addEventListener('click', function () {
+
         for (var i = 0; i < box.length; i++) {
             box[i].innerHTML = "";
             spaces[i + 1] = 0;
         }
-
+        players.className = "row";
+        symbol.className = "hidden";
         winner.className = "hidden";
         startmodal.classList.remove("hidden");
         bgmodal.classList.remove("hidden");
     });
-
 }
 
+// select "X"
 X.addEventListener('click', function () {
     //set turn to the opposite so when you click it is your turn
     player = 'X';
     turn = 'O';
     startmodal.className = "hidden";
     bgmodal.className = "hidden";
-
 });
 
+// select "O"
 O.addEventListener('click', function () {
     //set turn to the opposite so when you click it is your turn
     player = 'O';
@@ -90,6 +139,8 @@ O.addEventListener('click', function () {
     bgmodal.className = "hidden";
 });
 
+
+// close modal
 for (var i = 0; i < closemodal.length; i++) {
     closemodal[i].addEventListener('click', function () {
 
