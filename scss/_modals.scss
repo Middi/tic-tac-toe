@@ -40,6 +40,14 @@
     &:active {background: darken($light-grey, 5)}
 }
 
+.close {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    cursor: pointer;
+    cursor: hand;
+}
+
 .hidden {
     display: none;
 }

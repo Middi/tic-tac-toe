@@ -69,6 +69,9 @@ h3 {
   font-family: 'Architects Daughter', cursive;
   padding: 34px 50px; }
 
+p {
+  font-size: 2em; }
+
 a {
   color: whitesmoke; }
 
@@ -116,6 +119,13 @@ a {
     background: #e8e8e8; }
   #X:active, #O:active {
     background: #dbdbdb; }
+
+.close {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  cursor: pointer;
+  cursor: hand; }
 
 .hidden {
   display: none; }
@@ -219,7 +229,7 @@ footer p {
   font-size: 1em; }
 
 .built a, strong {
-  font-weight: 300; }
+  font-weight: 500; }
   .built a:hover, strong:hover {
     text-decoration: underline; }
 
@@ -247,12 +257,29 @@ footer p {
       background: #e8e8e8; }
   h1 {
     font-size: 1.8em; }
+  h2 {
+    font-size: 2.4em; }
+  h3 {
+    font-size: 5em;
+    padding: 0 25px; }
   button {
-    margin: 40px 0 20px 0; } }
+    margin: 40px 0 20px 0; }
+  #winner, #start {
+    width: 300px;
+    height: 200px;
+    top: -80px;
+    padding: 30px; } }
 
 /* -- BREAK 2 -- */
 @media all and (max-width: 400px) {
   .square {
     width: 90px;
     height: 90px;
-    padding-top: 0; } }
+    padding-top: 0; }
+  #winner, #start {
+    width: 280px;
+    height: 190px;
+    top: -80px;
+    padding: 20px; } }
+
+/* Heights */
