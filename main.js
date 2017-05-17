@@ -20,6 +20,7 @@ for (var i = 0; i < box.length; i++) {
             this.innerHTML = "O";
             spaces[this.id] = "O";
             turn = "O";
+            checkWin();
             console.log(turn);
             console.log(spaces);
         }
@@ -27,10 +28,22 @@ for (var i = 0; i < box.length; i++) {
             this.innerHTML = "X";
             spaces[this.id] = "X";
             turn = "X";
+            checkWin();
             console.log(turn);
             console.log(spaces);
         }
     });
+}
+
+
+function checkWin() {
+    if(spaces["1"] === "O" && spaces["2"] === "O"  && spaces["3"] === "O") {
+        console.log("O WINS!!");
+    }
+    else {
+        console.log("Keep going");
+    }
+
 }
 
 document.getElementById('restart').addEventListener('click', function () {
