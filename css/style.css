@@ -50,7 +50,7 @@ body {
 h1, h2, h3, h4 {
   font-family: 'Open Sans';
   font-weight: 700;
-  color: whitesmoke; }
+  color: #262626; }
 
 h1 {
   font-size: 2.2em;
@@ -60,12 +60,34 @@ h1 span {
   font-weight: 700;
   color: whitesmoke; }
 
+h2 {
+  font-size: 5em;
+  font-weight: 300; }
+
 a {
   color: whitesmoke; }
 
 .square {
   font-family: 'Architects Daughter', cursive;
   font-size: 100px; }
+
+#winner {
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: whitesmoke;
+  color: #262626;
+  border: 1px solid #262626;
+  text-align: center;
+  padding: 120px; }
+
+.hidden {
+  display: none; }
 
 body {
   background: whitesmoke; }
