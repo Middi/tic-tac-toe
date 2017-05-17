@@ -12,7 +12,12 @@
     height: 110px;
     font-size: 80px;
     padding-top: 10px;
+    
+    &:hover {background: none}
+    &:active {background: $light-grey}
 }
+
+
 
 h1 {font-size: 1.8em}
 

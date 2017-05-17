@@ -61,6 +61,7 @@ main {
 	transition: all 0.4s ease;
 
     &:hover {background: $light-grey}
+    &:active {background: darken($light-grey, 5)}
 }
 
 .top-border {border-top: 2px solid $black}
