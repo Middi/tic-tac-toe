@@ -119,8 +119,6 @@ main {
   transition: all 0.4s ease; }
   .square:hover {
     background: #e8e8e8; }
-  .square:active {
-    background: #dbdbdb; }
 
 .top-border {
   border-top: 2px solid #262626; }
