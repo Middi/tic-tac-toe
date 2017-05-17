@@ -10,8 +10,10 @@ var spaces = {
     "8": 0,
     "9": 0
 };
+var winner = document.getElementById('winner');
 
 var box = document.getElementsByClassName('square');
+var restart = document.getElementsByClassName('restart');
 
 for (var i = 0; i < box.length; i++) {
     box[i].addEventListener('click', function () {
@@ -37,7 +39,9 @@ for (var i = 0; i < box.length; i++) {
 
 
 function checkWin() {
-    if(spaces["1"] === "O" && spaces["2"] === "O"  && spaces["3"] === "O") {
+    if (spaces["1"] === "O" && spaces["2"] === "O" && spaces["3"] === "O") {
+
+        winner.classList.remove("hidden");
         console.log("O WINS!!");
     }
     else {
@@ -46,10 +50,15 @@ function checkWin() {
 
 }
 
-document.getElementById('restart').addEventListener('click', function () {
 
-    for (var i = 0; i < box.length; i++) {
-        box[i].innerHTML = "";
-        spaces[i + 1] = 0;
-    }
-});
+for (var i = 0; i < restart.length; i++) {
+    restart[i].addEventListener('click', function () {
+        for (var i = 0; i < box.length; i++) {
+            box[i].innerHTML = "";
+            spaces[i + 1] = 0;
+        }
+
+        winner.className = "hidden";
+    });
+
+}
