@@ -15,6 +15,10 @@ var spaces = {
 var winner = document.getElementById('winner');
 var box = document.getElementsByClassName('square');
 var restart = document.getElementsByClassName('restart');
+var startmodal = document.getElementById('start');
+var bgmodal = document.getElementById('modal-bg');
+var X = document.getElementById('X');
+var O = document.getElementById('O');
 
 
 // box event handlers
@@ -45,6 +49,7 @@ function checkWin() {
     if (spaces["1"] === "O" && spaces["2"] === "O" && spaces["3"] === "O") {
 
         winner.classList.remove("hidden");
+        bgmodal.classList.remove("hidden");
         console.log("O WINS!!");
     }
     else {
@@ -53,7 +58,7 @@ function checkWin() {
 
 }
 
-
+// restart button event listener
 for (var i = 0; i < restart.length; i++) {
     restart[i].addEventListener('click', function () {
         for (var i = 0; i < box.length; i++) {
@@ -62,6 +67,23 @@ for (var i = 0; i < restart.length; i++) {
         }
 
         winner.className = "hidden";
+        startmodal.classList.remove("hidden");
+        bgmodal.classList.remove("hidden");
     });
 
 }
+
+X.addEventListener('click', function() {
+    //set turn to the opposite so when you click it is your turn
+    turn = 'O';
+    startmodal.className = "hidden";
+    bgmodal.className = "hidden";
+
+});
+
+O.addEventListener('click', function() {
+    //set turn to the opposite so when you click it is your turn
+    turn = 'X';
+    startmodal.className = "hidden";
+    bgmodal.className = "hidden";
+});

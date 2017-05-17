@@ -67,7 +67,7 @@ h2 {
 h3 {
   font-size: 8em;
   font-family: 'Architects Daughter', cursive;
-  padding: 50px; }
+  padding: 34px 50px; }
 
 a {
   color: whitesmoke; }
@@ -84,7 +84,7 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(38, 38, 38, 0.5);
+  background: rgba(38, 38, 38, 0.6);
   z-index: 2; }
 
 #winner, #start {
@@ -105,6 +105,17 @@ a {
 
 #start {
   padding: 60px; }
+
+#X, #O {
+  margin: 30px 10px;
+  cursor: pointer;
+  cursor: hand;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease; }
+  #X:hover, #O:hover {
+    background: #e8e8e8; }
+  #X:active, #O:active {
+    background: #dbdbdb; }
 
 .hidden {
   display: none; }
