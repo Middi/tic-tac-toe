@@ -47,7 +47,10 @@ body {
   font-family: 'Open Sans';
   line-height: 1.2; }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: 'Open Sans';
   font-weight: 700;
   color: #262626; }
@@ -68,6 +71,11 @@ h3 {
   font-size: 8em;
   font-family: 'Architects Daughter', cursive;
   padding: 34px 50px; }
+
+h4 {
+  font-size: 4em;
+  font-weight: 300;
+  padding: 44px 40px; }
 
 p {
   font-size: 2em; }
