@@ -10,11 +10,14 @@ var spaces = {
     "8": 0,
     "9": 0
 };
-var winner = document.getElementById('winner');
 
+// event handler variables
+var winner = document.getElementById('winner');
 var box = document.getElementsByClassName('square');
 var restart = document.getElementsByClassName('restart');
 
+
+// box event handlers
 for (var i = 0; i < box.length; i++) {
     box[i].addEventListener('click', function () {
 

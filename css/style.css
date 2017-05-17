@@ -64,6 +64,11 @@ h2 {
   font-size: 5em;
   font-weight: 300; }
 
+h3 {
+  font-size: 8em;
+  font-family: 'Architects Daughter', cursive;
+  padding: 50px; }
+
 a {
   color: whitesmoke; }
 
@@ -71,12 +76,12 @@ a {
   font-family: 'Architects Daughter', cursive;
   font-size: 100px; }
 
-#winner {
+#winner, #start {
   width: 500px;
   height: 380px;
   position: absolute;
   margin: auto;
-  top: 0;
+  top: -80px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -85,6 +90,9 @@ a {
   border: 1px solid #262626;
   text-align: center;
   padding: 120px; }
+
+#start {
+  padding: 60px; }
 
 .hidden {
   display: none; }
@@ -154,7 +162,7 @@ button {
   border: none;
   background: none;
   color: #262626;
-  margin: 80px 0 20px 0;
+  margin: 70px 0 20px 0;
   font-size: 1.4rem;
   padding: 12px 14px;
   border-radius: 1px;
