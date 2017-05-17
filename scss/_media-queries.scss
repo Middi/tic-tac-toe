@@ -7,35 +7,29 @@
 
 @media all and (max-width: 580px) {
 
-.square {
-    width: 110px;
-    height: 110px;
-    font-size: 80px;
-    padding-top: 10px;
-    
-    &:hover {background: none}
-    &:active {background: $light-grey}
-}
+    .square {
+        width: 110px;
+        height: 110px;
+        font-size: 80px;
+        padding-top: 10px;
 
+        &:hover {background: none}
+        &:active {background: $light-grey}
+    }
 
+    h1 {font-size: 1.8em}
 
-h1 {font-size: 1.8em}
-
-button {
-    margin: 40px 0 20px 0;
-}
-
+    button {margin: 40px 0 20px 0}
 }
 
 
 /* -- BREAK 2 -- */
 
 @media all and (max-width: 400px) {
-
-.square {
-    width: 90px;
-    height: 90px;
-    padding-top: 0;
-}
-
+    
+    .square {
+        width: 90px;
+        height: 90px;
+        padding-top: 0;
+    }
 }

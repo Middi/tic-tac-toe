@@ -1,4 +1,4 @@
-var turn = "x";
+var turn = "X";
 var spaces = {
     "1": 0,
     "2": 0,
@@ -13,30 +13,30 @@ var spaces = {
 
 var box = document.getElementsByClassName('square');
 
-for(var i = 0; i < box.length; i++) {
-box[i].addEventListener('click', function () {
+for (var i = 0; i < box.length; i++) {
+    box[i].addEventListener('click', function () {
 
-    if (turn === "x") {
-        this.innerHTML = "O";
-        spaces[this.id] = 1;
-        turn = "o";
-        console.log(turn);
-        console.log(spaces);
-    }
-    else {
-        this.innerHTML = "X";
-        spaces[this.id] = 2;
-        turn = "x";
-        console.log(turn);
-        console.log(spaces);
-    }
-});
+        if (turn === "X") {
+            this.innerHTML = "O";
+            spaces[this.id] = "O";
+            turn = "O";
+            console.log(turn);
+            console.log(spaces);
+        }
+        else {
+            this.innerHTML = "X";
+            spaces[this.id] = "X";
+            turn = "X";
+            console.log(turn);
+            console.log(spaces);
+        }
+    });
 }
 
-document.getElementById('restart').addEventListener('click', function() {
+document.getElementById('restart').addEventListener('click', function () {
 
-for(var i = 0; i < box.length; i++) {
-    box[i].innerHTML = "";
-    spaces[i +1] = 0;
-}
+    for (var i = 0; i < box.length; i++) {
+        box[i].innerHTML = "";
+        spaces[i + 1] = 0;
+    }
 });
