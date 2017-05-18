@@ -30,36 +30,36 @@ function twoPlayer() {
 
     players.className = "hidden";
     symbol.className = "row";
-// box event handlers
-for (var i = 0; i < box.length; i++) {
-    box[i].addEventListener('click', function () {
+    // box event handlers
+    for (var i = 0; i < box.length; i++) {
+        box[i].addEventListener('click', function () {
 
-        if (turn === "X") {
-            if (spaces[this.id] === 0) {
-                this.innerHTML = "O";
-                spaces[this.id] = "O";
-                turn = "O";
-                checkWin();
-                console.log(turn);
-                console.log(spaces);
+            if (turn === "X") {
+                if (spaces[this.id] === 0) {
+                    this.innerHTML = "O";
+                    spaces[this.id] = "O";
+                    turn = "O";
+                    checkWin();
+                    console.log(turn);
+                    console.log(spaces);
 
+                }
+                else { console.log('space taken'); }
             }
-            else { console.log('space taken'); }
-        }
 
-        else {
-            if (spaces[this.id] === 0) {
-                this.innerHTML = "X";
-                spaces[this.id] = "X";
-                turn = "X";
-                checkWin();
-                console.log(turn);
-                console.log(spaces);
+            else {
+                if (spaces[this.id] === 0) {
+                    this.innerHTML = "X";
+                    spaces[this.id] = "X";
+                    turn = "X";
+                    checkWin();
+                    console.log(turn);
+                    console.log(spaces);
+                }
+                else { console.log('space taken'); }
             }
-            else {console.log('space taken');}
-        }
-    });
-}
+        });
+    }
 
 }
 
@@ -68,39 +68,41 @@ function onePlayer() {
 
     players.className = "hidden";
     symbol.className = "row";
-// box event handlers
-for (var i = 0; i < box.length; i++) {
-    box[i].addEventListener('click', function () {
+    // box event handlers
+    for (var i = 0; i < box.length; i++) {
+        box[i].addEventListener('click', function () {
 
-        if (spaces[this.id] === 0) {
+            if (spaces[this.id] === 0) {
 
-            this.innerHTML = "O";
-            spaces[this.id] = "O";
-            checkWin();
-            random();
-            // random number for object position
-            function random() {
-                num = Math.floor(Math.random() * 9) + 1;
-               return num.toString();
-            }
-            computer(num);
-
-            function computer(num) {
-                if (spaces[parseInt(num)] === 0) {
-                box[parseInt(num)].innerHTML = "X";
-                spaces[parseInt(num)] = "X";
-                console.log(num);
-                console.log('square free');
-            }
-            else {
+                this.innerHTML = "O";
+                spaces[this.id] = "O";
+                checkWin();
                 random();
+                // random number for object position
+                function random() {
+                    num = Math.floor(Math.random() * 9) + 1;
+                    console.log('num');
+                    return num.toString();
+                }
                 computer(num);
-            }
-        }
-        }
 
-    });
-}
+                function computer(num) {
+                    if (spaces[parseInt(num)] === 0) {
+                        console.log(spaces);
+                        box[parseInt(num - 1)].innerHTML = "X";
+                        spaces[parseInt(num)] = "X";
+                        console.log(num);
+                        console.log('square free');
+                    }
+                    else {
+                        random();
+                        computer(num);
+                    }
+                }
+            }
+
+        });
+    }
 
 }
 
@@ -180,5 +182,6 @@ function checkWin() {
         whoWins.innerHTML = "Draw!!";
         bgmodal.classList.remove("hidden");
         console.log("Draw");
+        return;
     }
 }
