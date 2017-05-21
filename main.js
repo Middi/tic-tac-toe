@@ -68,35 +68,16 @@ function twoPlayer() {
 
 function onePlayer() {
 
-    var isOpen = _.some(spaces, function(value, key) {
-        console.log('the key', key);
-        console.log('the value', value);
-        return value === 0;
-    });
+    // var isOpen = _.some(spaces, function(value, key) {
+    //     console.log('the key', key);
+    //     console.log('the value', value);
+    //     return value === 0;
+    // });
 
 
     //modal stuff
     players.className = "hidden";
     symbol.className = "row";
-
-
-// this was my thought about solution but still has the large pause at a draw, or when you win on the last move.
-
-
-// if((spaces["1"] === !0) && (spaces["2"] === !0) && (spaces["3"] === !0) && (spaces["4"] === !0) && (spaces["5"] === !0) && (spaces["6"] === !0) && (spaces["7"] === !0) && (spaces["8"] === !0) && (spaces["9"] === !0)) {
-
-    
-//     checkWin();
-// }
-
-// else {
-//     console.log("spaces available");
-// }
-
-
-
-
-
 
     // box event handlers
     for (var i = 0; i < box.length; i++) {
@@ -107,7 +88,22 @@ function onePlayer() {
 
                 this.innerHTML = "O";
                 spaces[this.id] = "O";
+
+// this was my thought about solution but still has the large pause at a draw, or when you win on the last move.
+
+
+if((spaces["1"] !== 0) && (spaces["2"] !== 0) && (spaces["3"] !== 0) && (spaces["4"] !== !0) && (spaces["5"] !== 0) && (spaces["6"] !== 0) && (spaces["7"] !== 0) && (spaces["8"] !== 0) && (spaces["9"] !== 0)) {
+
                 checkWin();
+
+}
+
+else {
+    console.log("spaces available");
+
+
+
+
                 // random number for object position
                 function random() {
                     num = Math.floor(Math.random() * 9) +1;
@@ -129,7 +125,7 @@ function onePlayer() {
                     }
                 }
             }
-
+        }
         });
     }
 
