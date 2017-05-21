@@ -126,7 +126,6 @@ function onePlayer() {
 
                 this.innerHTML = "X";
                 spaces[this.id] = "X";
-                turn = "O";
 
                 // this was my thought about solution but still has the large pause at a draw, or when you win on the last move.
 
