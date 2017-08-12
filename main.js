@@ -1,6 +1,7 @@
 var turn = "X";
 var player;
 var num;
+var mode;
 var spaces = {
     "1": 0,
     "2": 0,
@@ -29,9 +30,16 @@ var symbol = document.getElementById('symbol');
 
 function twoPlayer() {
 
+    mode = "two player";
+
+    if (mode === "one player") {
+        return;
+    }
+
     //Modal stuff
     players.className = "hidden";
     symbol.className = "row";
+
     // box event handlers
     for (var i = 0; i < box.length; i++) {
         box[i].addEventListener('click', function () {
@@ -45,10 +53,11 @@ function twoPlayer() {
                     console.log(turn);
                     console.log(spaces);
 
-                } else {
-                    console.log('space taken');
-                }
-            } else {
+                } 
+                else {console.log('space taken');}
+            } 
+
+            else {
                 if (spaces[this.id] === 0) {
                     this.innerHTML = "X";
                     spaces[this.id] = "X";
@@ -56,127 +65,172 @@ function twoPlayer() {
                     checkWin();
                     console.log(turn);
                     console.log(spaces);
-                } else {
-                    console.log('space taken');
                 }
+                else {console.log('space taken');}
             }
         });
     }
-
 }
+
+
+
 
 
 function onePlayer() {
 
-    // var isOpen = _.some(spaces, function(value, key) {
-    //     console.log('the key', key);
-    //     console.log('the value', value);
-    //     return value === 0;
-    // });
-
+    mode = "one player";
 
     //modal stuff
     players.className = "hidden";
     symbol.className = "row";
 
     // box event handlers
-    for (var i = 0; i < box.length; i++) {
-        box[i].addEventListener('click', function () {
+    for (var j = 0; j < box.length; j++) {
+        box[j].addEventListener('click', function () {
 
-            if (turn === 'X') {
-                if (spaces[this.id] === 0) {
+            if (mode === "two player") {
+                return;
+            }
+            else {
+                
+                //============
+                // O turn
+                //============
+                if (turn === 'X') {
+                    if (spaces[this.id] === 0) {
 
-                    this.innerHTML = "O";
-                    spaces[this.id] = "O";
-                    turn = "X";
+                        this.innerHTML = "O";
+                        spaces[this.id] = "O";
+                        
 
-                    // this was my thought about solution but still has the large pause at a draw, or when you win on the last move.
+                        // this was my thought about solution but still has the large pause at a draw, or when you win on the last move.
 
-                    if ((spaces["1"] !== 0) && (spaces["2"] !== 0) && (spaces["3"] !== 0) && (spaces["4"] !== !0) && (spaces["5"] !== 0) && (spaces["6"] !== 0) && (spaces["7"] !== 0) && (spaces["8"] !== 0) && (spaces["9"] !== 0)) {
+                            checkWin();
+                       
+                            // random number for object position
+                            function random() {
+                                num = Math.floor(Math.random() * 9) + 1;
+                                console.log('num');
+                                return num.toString();
+                            }
 
-                        checkWin();
-                    } else {
-                        console.log("spaces available");
+                            computer(random());
 
-                        // random number for object position
-                        function random() {
-                            num = Math.floor(Math.random() * 9) + 1;
-                            console.log('num');
-                            return num.toString();
+                            function computer(num) {
+                                if (spaces[num] === 0) {
+                                    console.log(spaces);
+                                    box[parseInt(num - 1)].innerHTML = "X";
+                                    spaces[parseInt(num)] = "X";
+                                    checkWin();
+                                    console.log(num);
+                                    console.log('square free');
+                                } 
+                                else {
+                                    computer(random());
+                                }
+                            }
+                        
+                    }
+                } 
+                
+                //============
+                // X turn
+                //============
+                
+                else {
+                    if (spaces[this.id] === 0) {
+                        
+                        this.innerHTML = "X";
+                        spaces[this.id] = "X";
+                        
+
+                        // this was my thought about solution but still has the large pause at a draw, or when you win on the last move.
+
+                        if ((spaces["1"] !== 0) && (spaces["2"] !== 0) && (spaces["3"] !== 0) && (spaces["4"] !== !0) && (spaces["5"] !== 0) && (spaces["6"] !== 0) && (spaces["7"] !== 0) && (spaces["8"] !== 0) && (spaces["9"] !== 0)) {
+
+                            checkWin();
                         }
+                        else {
+                            console.log("spaces available");
 
-                        computer(random());
+                            // random number for object position
+                            function random() {
+                                num = Math.floor(Math.random() * 9) + 1;
+                                console.log('num');
+                                return num.toString();
+                            }
 
-                        function computer(num) {
-                            if (spaces[num] === 0) {
-                                console.log(spaces);
-                                box[parseInt(num - 1)].innerHTML = "X";
-                                spaces[parseInt(num)] = "X";
-                                checkWin();
-                                console.log(num);
-                                console.log('square free');
-                            } else {
-                                computer(random());
+                             // random number for object position
+                             function random() {
+                                num = Math.floor(Math.random() * 9) + 1;
+                                console.log('num');
+                                return num.toString();
+                            }
+
+                            computer(random());
+
+                            function computer(num) {
+                                if (spaces[num] === 0) {
+                                    console.log(spaces);
+                                    box[parseInt(num - 1)].innerHTML = "0";
+                                    spaces[parseInt(num)] = "0";
+                                    checkWin();
+                                    console.log(num);
+                                    console.log('square free');
+                                } 
+                                else {
+                                    computer(random());
+                                }
                             }
                         }
                     }
+
+
+
+                    // this.innerHTML = "X";
+                    // spaces[this.id] = "X";
+
+                    // // this was my thought about solution but still has the large pause at a draw, or when you win on the last move.
+
+                    // if ((spaces["1"] !== 0) && (spaces["2"] !== 0) && (spaces["3"] !== 0) && (spaces["4"] !== !0) && (spaces["5"] !== 0) && (spaces["6"] !== 0) && (spaces["7"] !== 0) && (spaces["8"] !== 0) && (spaces["9"] !== 0)) {
+
+                    //     checkWin();
+                    // } else {
+                    //     console.log("spaces available");
+
+                    //     // random number for object position
+                    //     function random() {
+                    //         num = Math.floor(Math.random() * 9) + 1;
+                    //         console.log('num');
+                    //         return num.toString();
+                    //     }
+
+                    //     computer(random());
+
+                    //     function computer(num) {
+                    //         if (spaces[num] === 0) {
+                    //             console.log(spaces);
+                    //             box[parseInt(num - 1)].innerHTML = "O";
+                    //             spaces[parseInt(num)] = "O";
+                    //             checkWin();
+                    //             console.log(num);
+                    //             console.log('square free');
+                    //         } else {
+                    //             computer(random());
+                    //         }
+                    //     }
+                    // }
                 }
-
-            } else {
-
-                this.innerHTML = "X";
-                spaces[this.id] = "X";
-
-                // this was my thought about solution but still has the large pause at a draw, or when you win on the last move.
-
-                if ((spaces["1"] !== 0) && (spaces["2"] !== 0) && (spaces["3"] !== 0) && (spaces["4"] !== !0) && (spaces["5"] !== 0) && (spaces["6"] !== 0) && (spaces["7"] !== 0) && (spaces["8"] !== 0) && (spaces["9"] !== 0)) {
-
-                    checkWin();
-                } else {
-                    console.log("spaces available");
-
-                    // random number for object position
-                    function random() {
-                        num = Math.floor(Math.random() * 9) + 1;
-                        console.log('num');
-                        return num.toString();
-                    }
-
-                    computer(random());
-
-                    function computer(num) {
-                        if (spaces[num] === 0) {
-                            console.log(spaces);
-                            box[parseInt(num - 1)].innerHTML = "O";
-                            spaces[parseInt(num)] = "O";
-                            checkWin();
-                            console.log(num);
-                            console.log('square free');
-                        } else {
-                            computer(random());
-                        }
-                    }
-                }
-
-
-
-
-
-
-
             }
-
-
-
-
-
-
-
-
         });
     }
-
 }
+
+
+
+
+
+
 
 
 // restart button event listener
@@ -234,7 +288,7 @@ function checkWin() {
         whoWins.innerHTML = "'O' Wins!!";
         bgmodal.classList.remove("hidden");
         console.log("O WINS!!");
-        return;
+        return true;
     }
 
     // check if three in a row for 'X'
@@ -244,7 +298,7 @@ function checkWin() {
         whoWins.innerHTML = "'X' Wins!!";
         bgmodal.classList.remove("hidden");
         console.log("X WINS!!");
-        return;
+        return true;
     }
 
     // check for draw
@@ -254,6 +308,6 @@ function checkWin() {
         whoWins.innerHTML = "Draw!!";
         bgmodal.classList.remove("hidden");
         console.log("Draw");
-        return;
+        return true;
     }
 }
